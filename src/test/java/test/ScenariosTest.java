@@ -1,18 +1,12 @@
 package test;
 
-import model.SearchBlock;
-import org.openqa.selenium.By;
+import model.HomePage;
+import model.HotelsPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import util.BaseTest;
-import util.Utils;
-
-import javax.swing.text.Element;
 
 public class ScenariosTest extends BaseTest {
 
@@ -26,12 +20,22 @@ public class ScenariosTest extends BaseTest {
     @Test
     public void scenario1() {
         WebDriver driver = getDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 5);
+        WebDriverWait wait = getWebDriverWait();
+
         driver.get(HOMEPAGE);
-        driver.findElement(By.xpath("//a[@href='/hotels/'] /span[.='Hotels']")).click();
+
+        HomePage homepage = new HomePage(driver);
+        HotelsPage hotelsPage = homepage.goHotelsPage();
         Assert.assertEquals(HOTELSPAGE, driver.getCurrentUrl());
 
-        driver.findElement(By.id("downshift-1-input")).sendKeys(HOTELNAME);
+        hotelsPage.clickSearhLocation();
+
+
+
+
+
+//        .sendKeys(HOTELNAME);
+
 
 
     }

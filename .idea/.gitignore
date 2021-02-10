@@ -7,3 +7,5 @@
 # Maven
 log/
 target/
+# Default ignored files
+/workspace.xml
