@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public final class HomePage extends BasePage{
+public final class HomePage extends BasePage {
 
     @FindBy(xpath = "//a[@href='/hotels/'] /span[.='Hotels']")
     private WebElement hotels;
@@ -14,7 +14,7 @@ public final class HomePage extends BasePage{
         super(driver);
     }
 
-    public HotelsPage goHotelsPage(){
+    public HotelsPage goHotelsPage() {
         hotels.click();
         return new HotelsPage(getDriver());
     }

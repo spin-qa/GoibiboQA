@@ -44,7 +44,7 @@ public final class SearchBlock extends BasePage {
     private WebElement minusC;*/
 
 
-/*    @FindBy(xpath = "//div/span[.='+'][1]")
+/*    @FindBy(xpath = "//div/span[.='+'][1]/")
     private WebElement plusR;
 
     @FindBy(xpath = "//div/span[.='+'][2]")
@@ -74,12 +74,12 @@ public final class SearchBlock extends BasePage {
         checkInBox.click();
         checkOutBox.click();
         guestAndRoomsBox.click();
-        setupRoom(5, 1, 0);
+        setupRoom(5, 5, 0);
         roomSetupDoneButton.click();
         searchHotelButton.click();
     }
 
-    private void setupRoom (int room, int adult, int child) {
+    private void setupRoom(int room, int adult, int child) {
 
         int index = 0;
 
@@ -129,9 +129,6 @@ public final class SearchBlock extends BasePage {
                 plusall.get(2).click();
                 index++;
             }
-
         }
     }
-
-
 }

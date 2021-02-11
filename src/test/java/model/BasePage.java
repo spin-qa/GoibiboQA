@@ -17,12 +17,12 @@ public abstract class BasePage {
 
     protected WebDriver getDriver() {
         return driver;
-        }
+    }
 
     protected WebDriverWait getWait() {
         if (wait == null) {
-        wait = new WebDriverWait(driver, 10);
+            wait = new WebDriverWait(driver, 10);
         }
         return wait;
-        }
     }
+}

@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class FindHotelsInPage extends BasePage{
+public class FindHotelsInPage extends BasePage {
 
     @FindBy(xpath = "//input[@placeholder='LOCATION NAME' and @value= '" + "Ooty" + "']")
     private WebElement locationBox;
@@ -18,10 +18,10 @@ public class FindHotelsInPage extends BasePage{
     public FindHotelsInPage(WebDriver driver) {
         super(driver);
 
-     }
+    }
 
-     public void goSearchFieldsValidation(){
+    public void goSearchFieldsValidation() {
         locationBox.isEnabled();
         guestsAndRoomsBox.isEnabled();
-     }
+    }
 }

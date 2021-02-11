@@ -13,7 +13,7 @@ public abstract class BaseTest {
 
     private static final String HOMEPAGE = "https://www.goibibo.com/";
 
-    private static void setBrowser(){
+    private static void setBrowser() {
         WebDriverManager.chromedriver().setup();
     }
 
@@ -21,11 +21,11 @@ public abstract class BaseTest {
     private WebDriverWait webDriverWait;
 
     @BeforeMethod
-    public void setUp(){
+    public void setUp() {
         setBrowser();
-    this.driver = new ChromeDriver();
-    this.driver.manage().window().maximize();
-    this.driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        this.driver = new ChromeDriver();
+        this.driver.manage().window().maximize();
+        this.driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get(HOMEPAGE);
     }
 
@@ -38,7 +38,7 @@ public abstract class BaseTest {
 
     protected WebDriverWait getWebDriverWait() {
         if (webDriverWait == null) {
-            webDriverWait = new WebDriverWait(driver, 10);
+            webDriverWait = new WebDriverWait(driver, 5);
         }
         return webDriverWait;
     }
@@ -46,7 +46,6 @@ public abstract class BaseTest {
     protected WebDriver getDriver() {
         return driver;
     }
-
 
 
 }
