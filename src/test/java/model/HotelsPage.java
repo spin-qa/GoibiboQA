@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public final class HotelsPage extends BasePage{
 
-    @FindBy(xpath = "//input[@aria-labelledby =\"downshift-1-label\"]")
+    @FindBy(xpath = "//input[@aria-labelledby ='downshift-1-label']")
     private WebElement searchField;
 
     public HotelsPage(WebDriver driver) {
