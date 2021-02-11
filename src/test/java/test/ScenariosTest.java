@@ -1,7 +1,9 @@
 package test;
 
+import model.FindHotelsInPage;
 import model.HomePage;
 import model.HotelsPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -9,6 +11,8 @@ import org.testng.annotations.Test;
 import util.BaseTest;
 
 public class ScenariosTest extends BaseTest {
+
+    String locationResult;
 
     private WebDriver driver;
     private WebDriverWait webDriverWait;
@@ -28,14 +32,10 @@ public class ScenariosTest extends BaseTest {
         HotelsPage hotelsPage = homepage.goHotelsPage();
         Assert.assertEquals(HOTELSPAGE, driver.getCurrentUrl());
 
-        hotelsPage.clickSearhLocation();
+        hotelsPage.clickSearhLocation(HOTELNAME).getsearchresult();
 
-
-
-
-
-//        .sendKeys(HOTELNAME);
-
+        //validation
+        driver.findElement(By.xpath("//input[@placeholder='LOCATION NAME' and @value='Ooty']")).isEnabled();
 
 
     }
